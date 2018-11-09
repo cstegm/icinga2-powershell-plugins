@@ -30,7 +30,7 @@ object CheckCommand "PowerShell" {
         }
         "; exit" = {
             order = 99
-            value = "$$LASTEXITCODE"
+            value = ";trap{'[UNKNOWN] Error:' + $$_; exit 3};exit $$LASTEXITCODE"
         }
     }
 }
